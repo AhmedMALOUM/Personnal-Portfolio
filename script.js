@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*==================== typed js ====================*/
 
 const typed = new Typed('.multiple-text', {
-    strings: ['Data Analyst','Business Analyst'],
+    strings: ['Data Analyst','Chef de projet'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
