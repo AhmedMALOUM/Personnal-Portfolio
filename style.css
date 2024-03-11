@@ -147,8 +147,12 @@ span {
 }
 
 .home-content p {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
+
+.bold-text {
+    font-weight: bold;
+  }
 
 .social-media a {
     display: inline-flex;
@@ -395,6 +399,26 @@ p {
 .description {
     margin-left: 45px;
 }
+
+
+.technologies {
+    margin-left: 45px;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.technologies strong {
+    text-decoration: underline; /* Soulignement uniquement pour le mot "Technologies" */
+    font-weight: bold; /* Pour rendre le texte en gras */
+    color: var(--text-color);
+}
+
+.technologies span {
+    font-weight: normal; /* Pour éviter que le reste du texte soit en gras */
+}
+
+
 
 .education-content .location {
     font-size: 1.4rem;
