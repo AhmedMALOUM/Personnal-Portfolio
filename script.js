@@ -67,17 +67,17 @@ document.addEventListener('DOMContentLoaded', function () {
     skillsItems.forEach(item => {
         let progressBarContainer = item.querySelector('.progress-bar-container');
         let progressBar = progressBarContainer.querySelector('.progress-bar');
-        let percentText = progressBarContainer.querySelector('.percent-text'); // New line
+        let percentText = progressBarContainer.querySelector('.percent-text'); 
         let percentValue = item.getAttribute('data-percent');
 
         item.addEventListener('mouseenter', () => {
             progressBar.style.width = `${percentValue}%`;
-            percentText.textContent = `${percentValue}%`; // Update the percentage text
+            percentText.textContent = `${percentValue}%`; 
         });
 
         item.addEventListener('mouseleave', () => {
             progressBar.style.width = '0';
-            percentText.textContent = ''; // Clear the percentage text
+            percentText.textContent = ''; 
         });
     });
 });
@@ -101,16 +101,16 @@ const typed = new Typed('.multiple-text', {
 
 // ...
 
-// Ajoutez cette fonction pour gérer le basculement de la visibilité du contenu caché
+
 function toggleVisibility() {
     var hiddenContent = document.getElementById("hiddenContent");
   
-    // Vérifiez si le contenu est actuellement caché
+    
     if (hiddenContent.style.display === "none") {
-      // Si c'est le cas, changez le style pour l'afficher
+    
       hiddenContent.style.display = "block";
     } else {
-      // Sinon, cachez le contenu
+      
       hiddenContent.style.display = "none";
     }
 }
@@ -118,11 +118,9 @@ function toggleVisibility() {
 
 
 let currentDashboardImageIndex = 0;
-const dashboardImages = ["images/E1.png", "images/E2.png", "images/T1.png", "images/T2.png" /* Ajoutez d'autres images ici */];
+const dashboardImages = ["images/E1.png", "images/E2.png", "images/T1.png", "images/T2.png"];
 
-// ...
 
-// Fonction pour ouvrir la fenêtre modale Dashboards
 function openDashboardModal() {
     var dashboardModal = document.getElementById("dashboardModal");
     var dashboardModalImage = document.getElementById("dashboardModalImage");
@@ -155,7 +153,7 @@ function openDashboardModal() {
         nextDashboardButton.style.display = currentDashboardImageIndex === dashboardImages.length - 1 ? "none" : "block";
     };
 
-    // Ajoutez un événement de clic à la fenêtre modale Dashboards
+   
     dashboardModal.onclick = function(event) {
         // Si le clic est en dehors de l'image, fermez la modale
         if (event.target === dashboardModal) {
@@ -172,7 +170,7 @@ function showNextDashboardImage() {
     var dashboardModalImage = document.getElementById("dashboardModalImage");
     dashboardModalImage.src = dashboardImages[currentDashboardImageIndex];
 
-    // Mettez à jour l'affichage du bouton précédent en fonction de l'index
+ 
     var prevDashboardButton = document.getElementById("prevDashboardButton");
     prevDashboardButton.style.display = currentDashboardImageIndex === 0 ? "none" : "block";
 }
@@ -206,7 +204,7 @@ function closeDashboardModal() {
 
 
 let currentImageIndex = 0;
-const images = ["images/r1.png", "images/r2.png", "images/r3.png", "images/r4.png", "images/r5.png", "images/footer.png", /* Ajoutez d'autres images ici */];
+const images = ["images/r1.png", "images/r2.png", "images/r3.png", "images/r4.png", "images/r5.png", "images/footer.png"];
 
 function openModal() {
     var modal = document.getElementById("imageModal");
@@ -241,9 +239,9 @@ function openModal() {
         nextButton.style.display = currentImageIndex === images.length - 1 ? "none" : "block";
     };
 
-    // Ajoutez un événement de clic à la fenêtre modale
+   
     modal.onclick = function(event) {
-        // Si le clic est en dehors de l'image, fermez la modale
+       
         if (event.target === modal) {
             closeModal();
         }
@@ -284,7 +282,6 @@ function showPreviousImage() {
 
 
 
-// Fonction pour fermer la modale
 function closeModal() {
     var modal = document.getElementById("imageModal");
     modal.style.display = "none";
@@ -295,7 +292,7 @@ function closeModal() {
 
 
 let currentFunctionImageIndex = 0;
-const functionImages = ["images/f1.png", "images/f2.png", /* Ajoutez d'autres images ici */];
+const functionImages = ["images/f1.png", "images/f2.png"];
 
 // ...
 
@@ -469,7 +466,7 @@ function closePortfolioModal() {
 
 
 
-// Ajoutez cette fonction pour fermer la modale en appuyant sur la touche "Esc"
+
 document.onkeydown = function(event) {
     event = event || window.event;
     if (event.key === "Escape") {
@@ -481,28 +478,28 @@ document.onkeydown = function(event) {
 };
 
 function toggleLanguage() {
-    // Récupérez toutes les balises avec des attributs de traduction
+    
     var elements = document.querySelectorAll('[data-lang][data-en], [data-lang][data-fr]');
     var languageIndicator = document.getElementById('languageIndicator');
 
     elements.forEach(function(element) {
-        // Obtenez la langue actuelle de l'élément
+       
         var currentLanguage = element.getAttribute('data-lang');
-        // Déterminez la nouvelle langue
+       
         var newLanguage = currentLanguage === 'en' ? 'fr' : 'en';
 
-        // Obtenez la traduction pour la nouvelle langue
+        
         var translation = element.getAttribute('data-' + newLanguage);
         if (translation) {
-            // Appliquez la traduction
+          
             element.innerText = translation;
-            // Mettez à jour la langue de l'élément
+            
             element.setAttribute('data-lang', newLanguage);
         }
     });
 
-    // Mettez à jour le texte de languageIndicator à l'extérieur de la boucle forEach
-    languageIndicator.innerText = newLanguage.toUpperCase(EN); // Mettez en majuscules "EN" ou "FR"
+    
+    languageIndicator.innerText = newLanguage.toUpperCase(EN); 
 }
 
 
