@@ -89,8 +89,8 @@ section {
 }
 
 #toggleLanguageButton img {
-    width: 24px; /* Ajustez la largeur de l'image selon vos besoins */
-    height: 24px; /* Ajustez la hauteur de l'image selon vos besoins */
+    width: 24px; 
+    height: 24px;
 }
 
 
@@ -308,15 +308,15 @@ span {
 
 .education-content h3 {
     position: relative;
-    padding-left: 1.5em; /* Espace entre le bullet et le texte du <h3> */
+    padding-left: 1.5em; 
   }
   
   .education-content h3::before {
-    content: '\2022'; /* Code du caractère bullet */
+    content: '\2022';
     position: absolute;
     left: 0;
-    color: #ffffff; /* Couleur du bullet (changez la valeur selon vos préférences) */
-    font-weight: bold; /* Épaisseur de la police du bullet (vous pouvez ajuster selon vos préférences) */
+    color: #ffffff;
+    font-weight: bold; 
     font-size: 1.2em;
   }
   
@@ -409,13 +409,13 @@ p {
 }
 
 .technologies strong {
-    text-decoration: underline; /* Soulignement uniquement pour le mot "Technologies" */
-    font-weight: bold; /* Pour rendre le texte en gras */
+    text-decoration: underline; 
+    font-weight: bold; 
     color: var(--text-color);
 }
 
 .technologies span {
-    font-weight: normal; /* Pour éviter que le reste du texte soit en gras */
+    font-weight: normal;
 }
 
 
@@ -562,7 +562,7 @@ margin-bottom: 4rem;
 
 
 .skills-category li:hover {
-    transform: translateX(-90px); /* Décale l'élément de 50 pixels vers la gauche au survol */
+    transform: translateX(-90px); 
 }
   
 
@@ -576,28 +576,28 @@ margin-bottom: 4rem;
 .skills-category li .progress-bar-container {
     width: 0;
     max-width: 50%;
-    height: 15px; /* Hauteur de la barre de progression */
-    background: rgba(255, 255, 255, 0.2); /* Couleur de fond du conteneur */
+    height: 15px; 
+    background: rgba(255, 255, 255, 0.2); 
     position: absolute;
     bottom: 0;
     top: 5px;
     left: 80%;
-    border-radius: 8px; /* Coins arrondis */
-    transition: width 0.3s ease; /* Animation de transition de la couleur de fond */
+    border-radius: 8px; 
+    transition: width 0.3s ease; 
     box-shadow: 0 0 1rem var(--main-color);
 }
 
 .skills-category li:hover .progress-bar-container {
-    width: 100%; /* Afficher le conteneur au survol */
+    width: 100%;
 }
 
 .skills-category li .progress-bar {
     height: 100%;
-    width: 0; /* La largeur sera ajustée dynamiquement avec JavaScript */
+    width: 0; 
     max-width: 100%;
-    background: var(--main-color); /* Couleur de la barre de progression */
-    border-radius: 10px; /* Coins arrondis */
-    transition: width 0.3s ease; /* Animation de transition de la largeur */
+    background: var(--main-color);
+    border-radius: 10px; 
+    transition: width 0.3s ease; 
 }
 
 .percent-text {
@@ -605,8 +605,8 @@ margin-bottom: 4rem;
     text-align: center;
     font-size: 14px;
     font-weight: bold;
-    color: #fff; /* Change the color to your preference */
-    margin-top: -17px; /* Adjust the margin top based on your design */
+    color: #fff; 
+    margin-top: -17px;
 }
 
 .contact h2 {
@@ -854,9 +854,9 @@ section {
 
 }
 
-/* Ajouter une classe pour définir une largeur maximale à l'image modale */
+
 .modal-content img {
-    max-width: 100%; /* Vous pouvez ajuster la valeur selon vos besoins */
+    max-width: 100%; 
     height: auto;
     display: block; 
     margin: 0 auto;
@@ -879,7 +879,7 @@ img#modalImage {
     height: auto;
 }
 
-  /* Add animation (optional) */
+ 
 .modal-content {
     animation: modalZoom 0.6s;
 }
@@ -945,18 +945,18 @@ img#modalImage {
 .arrow-button {
     position: absolute;
     top: 45%;
-    right: -30px; /* Ajustez la distance à droite selon vos préférences */
-    font-size: 20px; /* Ajustez la taille de la flèche selon vos préférences */
+    right: -30px; 
+    font-size: 20px; 
     cursor: pointer;
     color: #fff;
-    transition: none; /* Ajustez la couleur de la flèche selon vos préférences */
+    transition: none; 
   }
   
 .arrow-button:hover {
-    color: #fff; /* Maintient la couleur lors du survol */
+    color: #fff;
 }
   .arrow-button:focus {
-    outline: none; /* Supprimez la bordure lorsqu'elle est cliquée pour une meilleure apparence */
+    outline: none;
     margin: 0;
 }
 
@@ -964,18 +964,18 @@ img#modalImage {
 .arrow-buttonl {
     position: absolute;
     top: 45%;
-    left: -30px; /* Ajustez la distance à droite selon vos préférences */
-    font-size: 20px; /* Ajustez la taille de la flèche selon vos préférences */
+    left: -30px;
+    font-size: 20px;
     cursor: pointer;
     color: #fff;
-    transition: none; /* Ajustez la couleur de la flèche selon vos préférences */
+    transition: none; 
   }
   
 .arrow-buttonl:hover {
-    color: #fff; /* Maintient la couleur lors du survol */
+    color: #fff; 
 }
   .arrow-buttonl:focus {
-    outline: none; /* Supprimez la bordure lorsqu'elle est cliquée pour une meilleure apparence */
+    outline: none; 
     margin: 0;
 }
 
