@@ -216,6 +216,95 @@
     <h2 class="heading" data-lang="fr" data-en="Latest Projects" data-fr="Projets Récents">Projets <span>Récents</span></h2>
 
     <div class="portfolio-container">
+     <div class="portfolio-box">
+        <img src="images/portfolio7.jpeg" alt="">
+        <div class="portfolio-layer">
+            <h4 data-lang="fr" data-en="Pizza Sales Dashboard using Power BI, Ms SQL Server, SSMS" data-fr="Tableau de bord des ventes de Pizza avec Power BI, Ms SQL Server, SSMS">Tableau de bord des ventes de Pizza avec Power BI, Ms SQL Server, SSMS</h4>
+            <div class="button-container">
+                <a onclick="openDashModal()" class="button" data-lang="fr" data-fr="Afficher les Dashboards" data-en="Show Dashboard">Afficher les Dashboards</a>
+                <a href="https://github.com/AhmedMALOUM/Dashboard-Power-BI-Pizza-Sales-" data-lang="fr" class="button" target="_blank" data-en="View project on GitHub" data-fr="Voir le projet sur Github">Voir le projet sur Github</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="modal" id="DashModal">
+      <div class="modal-content">
+          <span class="close" onclick="closeDashModal()">&times;</span>
+          <img id="DashModalImage" alt="Dash Image">
+          <button id="nextDashButton" onclick="showNextDashImage()" class="button arrow-button"><i class="fas fa-arrow-right"></i></button>
+          <button id="prevDashButton" onclick="showPreviousDashImage()" class="button arrow-buttonl"><i class="fas fa-arrow-left"></i></button>
+        
+      </div>
+    </div>
+      
+      
+      <div class="portfolio-box">
+        <img src="images/portfolio3.jpg" alt="">
+        <div class="portfolio-layer">
+            <h4 data-lang="fr" data-en="Personal Portfolio" data-fr="Portfolio Personnel">Portfolio Personnel</h4>
+            <div class="button-container">
+                <a onclick="openPortfolioModal()" class="button" data-lang="fr" data-fr="Afficher le Portfolio" data-en="Show Portfolio">Afficher le Portfolio</a>
+                <a href="https://github.com/AhmedMALOUM/Personnal-Portfolio" data-lang="fr" class="button" target="_blank" data-en="View Code on GitHub" data-fr="Voir le code sur Github">Voir le code sur Github</a>
+            </div>
+        </div>
+      </div>
+      
+      
+      <div class="modal" id="portfolioModal">
+      <div class="modal-content">
+          <span class="close" onclick="closePortfolioModal()">&times;</span>
+          <img id="portfolioModalImage" alt="Portfolio Image">
+          <button id="nextPortfolioButton" onclick="showNextPortfolioImage()" class="button arrow-button"><i class="fas fa-arrow-right"></i></button>
+          <button id="prevPortfolioButton" onclick="showPreviousPortfolioImage()" class="button arrow-buttonl"><i class="fas fa-arrow-left"></i></button>
+      </div>
+      </div>
+      
+      
+      
+      <div class="portfolio-box" id="restaurant-website">
+        <img src="images/portfolio3.jfif" alt="">
+        <div class="portfolio-layer">
+            <h4 data-lang="fr" data-en="Web site for a restaurant" data-fr="Site web pour un restaurant">Site web pour un restaurant</h4>
+            <div class="button-container">
+                <a onclick="openModal()" class="button" data-lang="fr" data-en="Show interfaces" data-fr="Affihcer les interfaces">Affihcer les interfaces</a>
+                <a href="https://github.com/AhmedMALOUM/Restaurant-Web-site" class="button" target="_blank" data-en="View Code on GitHub" data-fr="Voir le code sur Github">Voir le code sur Github</a>
+            </div>
+        </div>
+      </div>
+      
+      
+      <div class="modal" id="imageModal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" alt="Your Image">
+        <button id="nextButton" onclick="showNextImage()" class="button arrow-button"><i class="fas fa-arrow-right"></i></button>
+        <button id="prevButton" onclick="showPreviousImage()"class="button arrow-buttonl"><i class="fas fa-arrow-left"></i></button>
+      </div>
+      </div>
+      
+      
+      <div class="portfolio-box">
+        <img src="images/portfolio2.jfif" alt="">
+        <div class="portfolio-layer">
+          <h4 data-lang="fr" data-fr="Fontion de hachage" data-en="Hash Function">Fontion de hachage</h4>
+          <div class="button-container">
+            <a onclick="openFunctionModal()" class="button" data-lang="fr" data-en="Show Function diagram" data-fr="Afficher le diagramme">Afficher le diagramme</a>
+            <a href="https://github.com/AhmedMALOUM/Hash-function" class="button" target="_blank" data-lang="fr" data-en="View Code on GitHub" data-fr="Voir le code sur GitHub">Voir le code sur GitHub</a>
+        </div>
+        </div>
+      </div>
+      
+      <div class="modal" id="functionImageModal">
+        <div class="modal-content">
+          <span class="close" onclick="closeFunctionModal()">&times;</span>
+          <img id="functionModalImage" alt="Function Image">
+          <button id="nextFunctionButton" onclick="showNextFunctionImage()" class="button arrow-button"><i class="fas fa-arrow-right"></i></button>
+          <button id="prevFunctionButton" onclick="showPreviousFunctionImage()" class="button arrow-buttonl"><i class="fas fa-arrow-left"></i></button>
+      </div>
+      </div>
+      
+      
+      
       <div class="portfolio-box">
         <img src="images/portfolio1.jfif" alt="">
         <div class="portfolio-layer">
@@ -225,103 +314,16 @@
           <a href="https://github.com/AhmedMALOUM/Sales-Dashboard" class="button" target="_blank" data-lang="fr" data-en="View project" data-fr="Afficher le projet">Afficher le projet</a>
         </div>
       </div>
-    </div>
+      </div>
       
       <div class="modal" id="dashboardModal">
-    <div class="modal-content">
+      <div class="modal-content">
         <span class="close" onclick="closeDashboardModal()">&times;</span>
         <img id="dashboardModalImage" alt="Dashboard Image">
         <button id="nextDashboardButton" onclick="showNextDashboardImage()" class="button arrow-button"><i class="fas fa-arrow-right"></i></button>
         <button id="prevDashboardButton" onclick="showPreviousDashboardImage()" class="button arrow-buttonl"><i class="fas fa-arrow-left"></i></button>
-    </div>
-</div>
-
-
-        <div class="portfolio-box">
-          <img src="images/portfolio2.jfif" alt="">
-          <div class="portfolio-layer">
-            <h4 data-lang="fr" data-fr="Fontion de hachage" data-en="Hash Function">Fontion de hachage</h4>
-            <div class="button-container">
-              <a onclick="openFunctionModal()" class="button" data-lang="fr" data-en="Show Function diagram" data-fr="Afficher le diagramme">Afficher le diagramme</a>
-              <a href="https://github.com/AhmedMALOUM/Hash-function" class="button" target="_blank" data-lang="fr" data-en="View Code on GitHub" data-fr="Voir le code sur GitHub">Voir le code sur GitHub</a>
-          </div>
-          </div>
-        </div>
-
-        <div class="modal" id="functionImageModal">
-          <div class="modal-content">
-            <span class="close" onclick="closeFunctionModal()">&times;</span>
-            <img id="functionModalImage" alt="Function Image">
-            <button id="nextFunctionButton" onclick="showNextFunctionImage()" class="button arrow-button"><i class="fas fa-arrow-right"></i></button>
-            <button id="prevFunctionButton" onclick="showPreviousFunctionImage()" class="button arrow-buttonl"><i class="fas fa-arrow-left"></i></button>
-        </div>
       </div>
-      
-
-        <div class="portfolio-box" id="restaurant-website">
-          <img src="images/portfolio3.jfif" alt="">
-          <div class="portfolio-layer">
-              <h4 data-lang="fr" data-en="Web site for a restaurant" data-fr="Site web pour un restaurant">Site web pour un restaurant</h4>
-              <div class="button-container">
-                  <a onclick="openModal()" class="button" data-lang="fr" data-en="Show interfaces" data-fr="Affihcer les interfaces">Affihcer les interfaces</a>
-                  <a href="https://github.com/AhmedMALOUM/Restaurant-Web-site" class="button" target="_blank" data-en="View Code on GitHub" data-fr="Voir le code sur Github">Voir le code sur Github</a>
-              </div>
-          </div>
       </div>
-      
-
-      <div class="modal" id="imageModal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <img id="modalImage" alt="Your Image">
-          <button id="nextButton" onclick="showNextImage()" class="button arrow-button"><i class="fas fa-arrow-right"></i></button>
-          <button id="prevButton" onclick="showPreviousImage()"class="button arrow-buttonl"><i class="fas fa-arrow-left"></i></button>
-      </div>
-    </div>
-      
-      
-      
-           
-
-    <div class="portfolio-box">
-      <img src="images/portfolio3.jpg" alt="">
-      <div class="portfolio-layer">
-          <h4 data-lang="fr" data-en="Personal Portfolio" data-fr="Portfolio Personnel">Portfolio Personnel</h4>
-          <div class="button-container">
-              <a onclick="openPortfolioModal()" class="button" data-lang="fr" data-fr="Afficher le Portfolio" data-en="Show Portfolio">Afficher le Portfolio</a>
-              <a href="https://github.com/AhmedMALOUM/Personnal-Portfolio" data-lang="fr" class="button" target="_blank" data-en="View Code on GitHub" data-fr="Voir le code sur Github">Voir le code sur Github</a>
-          </div>
-      </div>
-  </div>
-
-
-  <div class="modal" id="portfolioModal">
-    <div class="modal-content">
-        <span class="close" onclick="closePortfolioModal()">&times;</span>
-        <img id="portfolioModalImage" alt="Portfolio Image">
-        <button id="nextPortfolioButton" onclick="showNextPortfolioImage()" class="button arrow-button"><i class="fas fa-arrow-right"></i></button>
-        <button id="prevPortfolioButton" onclick="showPreviousPortfolioImage()" class="button arrow-buttonl"><i class="fas fa-arrow-left"></i></button>
-    </div>
-</div>
-
-      <div class="portfolio-box">
-  <img src="images/portfolio7.jpeg" alt="">
-  <div class="portfolio-layer">
-      <h4 data-lang="fr" data-en="Pizza Sales Dashboard using Power BI, Ms SQL Server, SSMS" data-fr="Tableau de bord des ventes de Pizza avec Power BI, Ms SQL Server, SSMS">Tableau de bord des ventes de Pizza avec Power BI, Ms SQL Server, SSMS</h4>
-      <div class="button-container">
-          <a onclick="openDashModal()" class="button" data-lang="fr" data-fr="Afficher les Dashboards" data-en="Show Dashboard">Afficher les Dashboards</a>
-          <a href="https://github.com/AhmedMALOUM/Dashboard-Power-BI-Pizza-Sales-" data-lang="fr" class="button" target="_blank" data-en="View project on GitHub" data-fr="Voir le projet sur Github">Voir le projet sur Github</a>
-      </div>
-  </div>
-</div>
-<div class="modal" id="DashModal">
-<div class="modal-content">
-    <span class="close" onclick="closeDashModal()">&times;</span>
-    <img id="DashModalImage" alt="Dash Image">
-    <button id="nextDashButton" onclick="showNextDashImage()" class="button arrow-button"><i class="fas fa-arrow-right"></i></button>
-    <button id="prevDashButton" onclick="showPreviousDashImage()" class="button arrow-buttonl"><i class="fas fa-arrow-left"></i></button>
-  
-</div>
 
   </div>  
     
