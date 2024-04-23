@@ -464,6 +464,91 @@ function closePortfolioModal() {
     navbar.classList.remove('modal-open');
 }
 
+let currentDashImageIndex = 0;
+const DashImages = ["images/D1.png", "images/D2.png", "images/D3.png", "images/D4.png", "images/D5.png", "images/D6.png" /* Ajoutez d'autres images ici */];
+
+// ...
+
+// Fonction pour ouvrir la fenêtre modale Portfolio
+function openDashModal() {
+    var DashModal = document.getElementById("DashModal");
+    var DashModalImage = document.getElementById("DashModalImage");
+    var prevDashButton = document.getElementById("prevDashButton");
+    var nextDashButton = document.getElementById("nextDashButton");
+
+    document.documentElement.classList.add('modal-open');
+    document.body.style.overflow = 'hidden';
+    navbar.classList.add('modal-open');
+
+    currentDashImageIndex = 0;
+
+    DashModalImage.src = DashImages[currentDashImageIndex];
+    DashModal.style.display = "block";
+
+    // Gérer l'affichage du bouton "Show Previous Image"
+    prevDashButton.style.display = currentDashImageIndex === 0 ? "none" : "block";
+
+    // Gérer l'affichage du bouton "Show Next Image"
+    nextDashButton.style.display = currentDashImageIndex === DashImages.length - 1 ? "none" : "block";
+
+    prevDashButton.onclick = function() {
+        showPreviousDashImage();
+    };
+
+    nextDashButton.onclick = function() {
+        showNextDashImage();
+
+        // Mettre à jour la visibilité du bouton "Show Next Image" après le changement d'image
+        nextDashButton.style.display = currentDashImageIndex === DashImages.length - 1 ? "none" : "block";
+    };
+
+    // Ajoutez un événement de clic à la fenêtre modale
+    DashModal.onclick = function(event) {
+        // Si le clic est en dehors de l'image, fermez la modale
+        if (event.target === DashModal) {
+            closeDashModal();
+        }
+    };
+}
+
+// Fonction pour afficher la prochaine image de la fenêtre modale Portfolio
+function showNextDashImage() {
+    // Incrémente l'index pour afficher la prochaine image
+    currentDashImageIndex = (currentDashImageIndex + 1) % DashImages.length;
+
+    var DashModalImage = document.getElementById("DashModalImage");
+    DashModalImage.src = DashImages[currentDashImageIndex];
+
+    // Mettez à jour l'affichage du bouton précédent en fonction de l'index
+    var prevDashButton = document.getElementById("prevDashButton");
+    prevDashButton.style.display = currentDashImageIndex === 0 ? "none" : "block";
+}
+
+// Fonction pour afficher l'image précédente de la fenêtre modale Portfolio
+function showPreviousDashImage() {
+    // Décrémente l'index pour afficher l'image précédente
+    currentDashImageIndex = (currentDashImageIndex - 1 + DashImages.length) % DashImages.length;
+
+    var DashModalImage = document.getElementById("DashModalImage");
+    DashModalImage.src = DashImages[currentDashImageIndex];
+
+    var prevDashButton = document.getElementById("prevDashButton");
+    prevDashButton.style.display = currentDashImageIndex === 0 ? "none" : "block";
+
+    var nextDashButton = document.getElementById("nextDashButton");
+    nextDashButton.style.display = currentDashImageIndex === DashImages.length - 1 ? "none" : "block";
+}
+
+
+
+// Fonction pour fermer la fenêtre modale Portfolio
+function closeDashModal() {
+    var DashModal = document.getElementById("DashModal");
+    DashModal.style.display = "none";
+    document.body.style.overflow = 'auto';
+    navbar.classList.remove('modal-open');
+}
+
 
 
 
@@ -474,6 +559,7 @@ document.onkeydown = function(event) {
       closeFunctionModal();
       closeDashboardModal();
       closePortfolioModal();
+      closeDashModal();
     }
 };
 
