@@ -67,17 +67,17 @@ document.addEventListener('DOMContentLoaded', function () {
     skillsItems.forEach(item => {
         let progressBarContainer = item.querySelector('.progress-bar-container');
         let progressBar = progressBarContainer.querySelector('.progress-bar');
-        let percentText = progressBarContainer.querySelector('.percent-text'); 
+        let percentText = progressBarContainer.querySelector('.percent-text'); // New line
         let percentValue = item.getAttribute('data-percent');
 
         item.addEventListener('mouseenter', () => {
             progressBar.style.width = `${percentValue}%`;
-            percentText.textContent = `${percentValue}%`; 
+            percentText.textContent = `${percentValue}%`; // Update the percentage text
         });
 
         item.addEventListener('mouseleave', () => {
             progressBar.style.width = '0';
-            percentText.textContent = ''; 
+            percentText.textContent = ''; // Clear the percentage text
         });
     });
 });
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*==================== typed js ====================*/
 
 const typed = new Typed('.multiple-text', {
-    strings: ['Data Analyst','Chef De Projet'],
+    strings: ['Data Analyst','Data Engineer','Business Analyst', 'Data Catalog Administrator', 'Data Steward', 'Data Governance Specialist', 'Chef de projet Data'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
@@ -101,16 +101,16 @@ const typed = new Typed('.multiple-text', {
 
 // ...
 
-
+// Ajoutez cette fonction pour gérer le basculement de la visibilité du contenu caché
 function toggleVisibility() {
     var hiddenContent = document.getElementById("hiddenContent");
   
-    
+    // Vérifiez si le contenu est actuellement caché
     if (hiddenContent.style.display === "none") {
-    
+      // Si c'est le cas, changez le style pour l'afficher
       hiddenContent.style.display = "block";
     } else {
-      
+      // Sinon, cachez le contenu
       hiddenContent.style.display = "none";
     }
 }
@@ -118,9 +118,11 @@ function toggleVisibility() {
 
 
 let currentDashboardImageIndex = 0;
-const dashboardImages = ["images/E1.png", "images/E2.png", "images/T1.png", "images/T2.png"];
+const dashboardImages = ["images/E1.png", "images/E2.png", "images/T1.png", "images/T2.png" /* Ajoutez d'autres images ici */];
 
+// ...
 
+// Fonction pour ouvrir la fenêtre modale Dashboards
 function openDashboardModal() {
     var dashboardModal = document.getElementById("dashboardModal");
     var dashboardModalImage = document.getElementById("dashboardModalImage");
@@ -153,7 +155,7 @@ function openDashboardModal() {
         nextDashboardButton.style.display = currentDashboardImageIndex === dashboardImages.length - 1 ? "none" : "block";
     };
 
-   
+    // Ajoutez un événement de clic à la fenêtre modale Dashboards
     dashboardModal.onclick = function(event) {
         // Si le clic est en dehors de l'image, fermez la modale
         if (event.target === dashboardModal) {
@@ -170,7 +172,7 @@ function showNextDashboardImage() {
     var dashboardModalImage = document.getElementById("dashboardModalImage");
     dashboardModalImage.src = dashboardImages[currentDashboardImageIndex];
 
- 
+    // Mettez à jour l'affichage du bouton précédent en fonction de l'index
     var prevDashboardButton = document.getElementById("prevDashboardButton");
     prevDashboardButton.style.display = currentDashboardImageIndex === 0 ? "none" : "block";
 }
@@ -202,9 +204,163 @@ function closeDashboardModal() {
 
 
 
+let currentMapImageIndex = 0;
+const mapImages = ["images/MapExecution1.png", "images/MapExecution2.png", "images/MapExecution3.png", "images/MapExecution4.png" /* Ajoutez d'autres images ici */];
+
+// Fonction pour ouvrir la fenêtre modale Map
+function openMapModal() {
+    var mapModal = document.getElementById("mapModal");
+    var mapModalImage = document.getElementById("mapModalImage");
+    var prevMapButton = document.getElementById("prevMapButton");
+    var nextMapButton = document.getElementById("nextMapButton");
+
+    document.documentElement.classList.add('modal-open');
+    document.body.style.overflow = 'hidden';
+    navbar.classList.add('modal-open');
+
+    currentMapImageIndex = 0;
+
+    mapModalImage.src = mapImages[currentMapImageIndex];
+    mapModal.style.display = "block";
+
+    // Gérer l'affichage du bouton "Image précédente"
+    prevMapButton.style.display = currentMapImageIndex === 0 ? "none" : "block";
+
+    // Gérer l'affichage du bouton "Image suivante"
+    nextMapButton.style.display = currentMapImageIndex === mapImages.length - 1 ? "none" : "block";
+
+    prevMapButton.onclick = function() {
+        showPreviousMapImage();
+    };
+
+    nextMapButton.onclick = function() {
+        showNextMapImage();
+    };
+
+    // Fermer la modale si on clique en dehors de l'image
+    mapModal.onclick = function(event) {
+        if (event.target === mapModal) {
+            closeMapModal();
+        }
+    };
+}
+
+// Fonction pour afficher l'image suivante
+function showNextMapImage() {
+    currentMapImageIndex = (currentMapImageIndex + 1) % mapImages.length;
+
+    var mapModalImage = document.getElementById("mapModalImage");
+    mapModalImage.src = mapImages[currentMapImageIndex];
+
+    var prevMapButton = document.getElementById("prevMapButton");
+    var nextMapButton = document.getElementById("nextMapButton");
+
+    prevMapButton.style.display = currentMapImageIndex === 0 ? "none" : "block";
+    nextMapButton.style.display = currentMapImageIndex === mapImages.length - 1 ? "none" : "block";
+}
+
+// Fonction pour afficher l'image précédente
+function showPreviousMapImage() {
+    currentMapImageIndex = (currentMapImageIndex - 1 + mapImages.length) % mapImages.length;
+
+    var mapModalImage = document.getElementById("mapModalImage");
+    mapModalImage.src = mapImages[currentMapImageIndex];
+
+    var prevMapButton = document.getElementById("prevMapButton");
+    var nextMapButton = document.getElementById("nextMapButton");
+
+    prevMapButton.style.display = currentMapImageIndex === 0 ? "none" : "block";
+    nextMapButton.style.display = currentMapImageIndex === mapImages.length - 1 ? "none" : "block";
+}
+
+// Fonction pour fermer la fenêtre modale Map
+function closeMapModal() {
+    var mapModal = document.getElementById("mapModal");
+    mapModal.style.display = "none";
+    document.body.style.overflow = 'auto';
+    navbar.classList.remove('modal-open');
+}
+
+
+
+
+
+
+let currentTreeImageIndex = 0;
+const decisionTreeImages = ["images/DecisionTri_Execution.png"]; // Ajouter l'image de l'arbre de décision ici
+
+// Fonction pour ouvrir la fenêtre modale et afficher l'image de l'arbre de décision
+function openDecisionTreeModal() {
+    var decisionTreeModal = document.getElementById("decisionTreeModal");
+    var decisionTreeModalImage = document.getElementById("decisionTreeModalImage");
+
+    document.documentElement.classList.add('modal-open');
+    document.body.style.overflow = 'hidden';
+
+    decisionTreeModalImage.src = decisionTreeImages[currentTreeImageIndex]; // Correction ici
+    decisionTreeModal.style.display = "block";
+
+    // Fermer la modale si on clique en dehors de l'image
+    decisionTreeModal.onclick = function(event) {
+        if (event.target === decisionTreeModal) {
+            closeDecisionTreeModal();
+        }
+    };
+}
+
+// Fonction pour fermer la fenêtre modale
+function closeDecisionTreeModal() {
+    var decisionTreeModal = document.getElementById("decisionTreeModal");
+    decisionTreeModal.style.display = "none";
+    document.body.style.overflow = 'auto';
+}
+
+
+
+
+
+
+
+let currentCarImageIndex = 0;
+const CarPredImages = ["images/car1.png"]; // L'image à afficher
+
+// Fonction pour ouvrir la fenêtre modale Car
+function openCarModal() {
+    var carModal = document.getElementById("CarModal");
+    var modalCarImage = document.getElementById("modalCarImage");
+
+    document.documentElement.classList.add('modal-open');
+    document.body.style.overflow = 'hidden';
+    navbar.classList.add('modal-open'); // Assure-toi que "navbar" existe bien dans ton HTML
+
+    currentCarImageIndex = 0;
+
+    modalCarImage.src = CarPredImages[currentCarImageIndex];
+    carModal.style.display = "block";
+
+    // Fermer la modale si on clique en dehors de l'image
+    carModal.onclick = function(event) {
+        if (event.target === carModal) {
+            closeCarModal();
+        }
+    };
+}
+
+// Fonction pour fermer la fenêtre modale
+function closeCarModal() {
+    var carModal = document.getElementById("CarModal");
+    carModal.style.display = "none";
+    document.body.style.overflow = 'auto';
+    navbar.classList.remove('modal-open');
+}
+
+
+
+
+
 
 let currentImageIndex = 0;
-const images = ["images/r1.png", "images/r2.png", "images/r3.png", "images/r4.png", "images/r5.png", "images/footer.png"];
+const images = ["images/r1.png", "images/r2.png", "images/r3.png", "images/r4.png", "images/r5.png", "images/footer.png", /* Ajoutez d'autres images ici */];
 
 function openModal() {
     var modal = document.getElementById("imageModal");
@@ -239,9 +395,9 @@ function openModal() {
         nextButton.style.display = currentImageIndex === images.length - 1 ? "none" : "block";
     };
 
-   
+    // Ajoutez un événement de clic à la fenêtre modale
     modal.onclick = function(event) {
-       
+        // Si le clic est en dehors de l'image, fermez la modale
         if (event.target === modal) {
             closeModal();
         }
@@ -282,6 +438,7 @@ function showPreviousImage() {
 
 
 
+// Fonction pour fermer la modale
 function closeModal() {
     var modal = document.getElementById("imageModal");
     modal.style.display = "none";
@@ -291,8 +448,94 @@ function closeModal() {
 }
 
 
+
+
+
+
+let currentPizzaImageIndex = 0;
+const pizzaImages = [
+    "images/pizza1.png",
+    "images/pizza2.png",
+    // Ajoute d'autres images ici si nécessaire
+];
+
+// Fonction pour ouvrir la fenêtre modale Pizza
+function openPizzaModal() {
+    var pizzaModal = document.getElementById("PizzaModal");
+    var pizzaModalImage = document.getElementById("modalPizzaImage");
+    var prevPizzaButton = document.getElementById("prevPizzaButton");
+    var nextPizzaButton = document.getElementById("nextPizzaButton");
+
+    document.documentElement.classList.add('modal-open');
+    document.body.style.overflow = 'hidden';
+    navbar.classList.add('modal-open');
+
+    currentPizzaImageIndex = 0;
+
+    pizzaModalImage.src = pizzaImages[currentPizzaImageIndex];
+    pizzaModal.style.display = "block";
+
+    prevPizzaButton.style.display = currentPizzaImageIndex === 0 ? "none" : "block";
+    nextPizzaButton.style.display = currentPizzaImageIndex === pizzaImages.length - 1 ? "none" : "block";
+
+    prevPizzaButton.onclick = function() {
+        showPreviousPizzaImage();
+    };
+
+    nextPizzaButton.onclick = function() {
+        showNextPizzaImage();
+    };
+
+    pizzaModal.onclick = function(event) {
+        if (event.target === pizzaModal) {
+            closePizzaModal();
+        }
+    };
+}
+
+// Fonction pour afficher l'image suivante
+function showNextPizzaImage() {
+    currentPizzaImageIndex = (currentPizzaImageIndex + 1) % pizzaImages.length;
+
+    var pizzaModalImage = document.getElementById("modalPizzaImage");
+    pizzaModalImage.src = pizzaImages[currentPizzaImageIndex];
+
+    var prevPizzaButton = document.getElementById("prevPizzaButton");
+    var nextPizzaButton = document.getElementById("nextPizzaButton");
+
+    prevPizzaButton.style.display = currentPizzaImageIndex === 0 ? "none" : "block";
+    nextPizzaButton.style.display = currentPizzaImageIndex === pizzaImages.length - 1 ? "none" : "block";
+}
+
+// Fonction pour afficher l'image précédente
+function showPreviousPizzaImage() {
+    currentPizzaImageIndex = (currentPizzaImageIndex - 1 + pizzaImages.length) % pizzaImages.length;
+
+    var pizzaModalImage = document.getElementById("modalPizzaImage");
+    pizzaModalImage.src = pizzaImages[currentPizzaImageIndex];
+
+    var prevPizzaButton = document.getElementById("prevPizzaButton");
+    var nextPizzaButton = document.getElementById("nextPizzaButton");
+
+    prevPizzaButton.style.display = currentPizzaImageIndex === 0 ? "none" : "block";
+    nextPizzaButton.style.display = currentPizzaImageIndex === pizzaImages.length - 1 ? "none" : "block";
+}
+
+// Fonction pour fermer la fenêtre modale Pizza
+function closePizzaModal() {
+    var pizzaModal = document.getElementById("PizzaModal");
+    pizzaModal.style.display = "none";
+    document.body.style.overflow = 'auto';
+    navbar.classList.remove('modal-open');
+}
+
+
+
+
+
+
 let currentFunctionImageIndex = 0;
-const functionImages = ["images/f1.png", "images/f2.png"];
+const functionImages = ["images/f1.png", "images/f2.png", /* Ajoutez d'autres images ici */];
 
 // ...
 
@@ -456,6 +699,8 @@ function showPreviousPortfolioImage() {
     nextPortfolioButton.style.display = currentPortfolioImageIndex === portfolioImages.length - 1 ? "none" : "block";
 }
 
+
+
 // Fonction pour fermer la fenêtre modale Portfolio
 function closePortfolioModal() {
     var portfolioModal = document.getElementById("portfolioModal");
@@ -463,6 +708,8 @@ function closePortfolioModal() {
     document.body.style.overflow = 'auto';
     navbar.classList.remove('modal-open');
 }
+
+
 
 let currentDashImageIndex = 0;
 const DashImages = ["images/D1.png", "images/D2.png", "images/D3.png", "images/D4.png", "images/D5.png", "images/D6.png" /* Ajoutez d'autres images ici */];
@@ -552,6 +799,7 @@ function closeDashModal() {
 
 
 
+// Ajoutez cette fonction pour fermer la modale en appuyant sur la touche "Esc"
 document.onkeydown = function(event) {
     event = event || window.event;
     if (event.key === "Escape") {
@@ -564,28 +812,29 @@ document.onkeydown = function(event) {
 };
 
 function toggleLanguage() {
-    
+    // Récupérez toutes les balises avec des attributs de traduction
     var elements = document.querySelectorAll('[data-lang][data-en], [data-lang][data-fr]');
     var languageIndicator = document.getElementById('languageIndicator');
 
     elements.forEach(function(element) {
-       
+        // Obtenez la langue actuelle de l'élément
         var currentLanguage = element.getAttribute('data-lang');
-       
+        // Déterminez la nouvelle langue
         var newLanguage = currentLanguage === 'en' ? 'fr' : 'en';
 
-        
+        // Obtenez la traduction pour la nouvelle langue
         var translation = element.getAttribute('data-' + newLanguage);
         if (translation) {
-          
+            // Appliquez la traduction
             element.innerText = translation;
-            
+            // Mettez à jour la langue de l'élément
             element.setAttribute('data-lang', newLanguage);
         }
     });
 
-    
-    languageIndicator.innerText = newLanguage.toUpperCase(EN); 
+    // Mettez à jour le texte de languageIndicator à l'extérieur de la boucle forEach
+    languageIndicator.innerText = newLanguage.toUpperCase(EN); // Mettez en majuscules "EN" ou "FR"
 }
+
 
 
